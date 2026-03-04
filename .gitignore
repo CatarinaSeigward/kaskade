@@ -50,3 +50,6 @@ grafana/data/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Local docs (not tracked in git)
+helpDoc/
