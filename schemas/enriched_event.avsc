@@ -1,0 +1,64 @@
+{
+  "type": "record",
+  "name": "EnrichedEvent",
+  "namespace": "com.kaskade.schemas",
+  "doc": "Enriched market event with windowed aggregation metrics computed by Spark Structured Streaming.",
+  "fields": [
+    {
+      "name": "symbol",
+      "type": "string",
+      "doc": "Ticker symbol"
+    },
+    {
+      "name": "window_start",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Aggregation window start time in epoch milliseconds"
+    },
+    {
+      "name": "window_end",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Aggregation window end time in epoch milliseconds"
+    },
+    {
+      "name": "vwap",
+      "type": "double",
+      "doc": "Volume-Weighted Average Price for the window"
+    },
+    {
+      "name": "volatility",
+      "type": "double",
+      "doc": "Rolling standard deviation of log returns within window"
+    },
+    {
+      "name": "rsi",
+      "type": "double",
+      "doc": "Relative Strength Index (14-period) at window close"
+    },
+    {
+      "name": "volume",
+      "type": "long",
+      "doc": "Total trade volume within the window"
+    },
+    {
+      "name": "trade_count",
+      "type": "long",
+      "doc": "Number of individual trades in the window"
+    },
+    {
+      "name": "high",
+      "type": "double",
+      "doc": "Highest trade price in the window"
+    },
+    {
+      "name": "low",
+      "type": "double",
+      "doc": "Lowest trade price in the window"
+    }
+  ]
+}

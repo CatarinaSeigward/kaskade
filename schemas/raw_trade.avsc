@@ -1,0 +1,41 @@
+{
+  "type": "record",
+  "name": "RawTrade",
+  "namespace": "com.kaskade.schemas",
+  "doc": "Raw trade event from market data sources. Each record represents a single executed trade.",
+  "fields": [
+    {
+      "name": "symbol",
+      "type": "string",
+      "doc": "Ticker symbol (e.g., AAPL, GOOGL)"
+    },
+    {
+      "name": "price",
+      "type": "double",
+      "doc": "Trade execution price in USD"
+    },
+    {
+      "name": "volume",
+      "type": "long",
+      "doc": "Number of shares traded"
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Trade execution timestamp in epoch milliseconds"
+    },
+    {
+      "name": "exchange",
+      "type": "string",
+      "doc": "Exchange where the trade was executed (e.g., NYSE, NASDAQ)"
+    },
+    {
+      "name": "trade_id",
+      "type": "string",
+      "doc": "Unique identifier for the trade event"
+    }
+  ]
+}

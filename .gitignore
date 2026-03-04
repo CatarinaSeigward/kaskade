@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Scala / SBT
+spark-streaming/target/
+spark-streaming/project/target/
+spark-streaming/project/project/
+*.class
+*.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# Docker
+docker-compose.override.yml
+
+# Data & Logs
+data/
+logs/
+checkpoints/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Grafana
+grafana/data/
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/

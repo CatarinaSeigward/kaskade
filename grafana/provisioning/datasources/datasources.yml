@@ -1,0 +1,36 @@
+# ============================================================
+# Grafana Data Source Provisioning
+# Auto-configures PostgreSQL and Redis data sources on startup.
+# ============================================================
+
+apiVersion: 1
+
+datasources:
+  # PostgreSQL - Historical market metrics and alert audit log
+  - name: PostgreSQL
+    type: postgres
+    access: proxy
+    url: postgres:5432
+    database: financial_analytics
+    user: analytics
+    secureJsonData:
+      password: analytics_secure_password
+    jsonData:
+      sslmode: disable
+      maxOpenConns: 10
+      maxIdleConns: 5
+      connMaxLifetime: 14400
+      postgresVersion: 1600
+      timescaledb: false
+    isDefault: true
+    editable: true
+
+  # Redis - Real-time metrics cache
+  - name: Redis
+    type: redis-datasource
+    access: proxy
+    url: redis:6379
+    jsonData:
+      client: standalone
+      poolSize: 5
+    editable: true
